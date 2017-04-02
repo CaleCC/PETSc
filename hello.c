@@ -30,7 +30,7 @@ int main(int Argc,char **Args)
       PETSC_COMM_WORLD,"this program runs on 27 processors\n"
      ); CHKERRQ(ierr);
 
-  /*
+  /*t 
    * Exercise 2:
    * -- use PetscSynchronizedPrintf to let each processor print in sequence
    */
