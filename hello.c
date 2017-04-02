@@ -15,7 +15,7 @@ int main(int Argc,char **Args)
 {
   int ierr,procno,nprocs;
 
-  ierr = PetscInitialize(&Argc,&Args,PETSC_NULL,PETSC_NULL); CHKERRQ(ierr);
+  ierr = PetscInitialize(&Argc,&Args,0,"Usage: prog -o1 v1 -o2 v2\n"); CHKERRQ(ierr);
   MPI_Comm comm = PETSC_COMM_WORLD;
 
   MPI_Comm_rank(comm,&procno);
@@ -27,7 +27,7 @@ int main(int Argc,char **Args)
    */
   ierr = PetscPrintf
     (
-      PETSC_COMM_WORLD,"this program runs on 27 processors"
+      PETSC_COMM_WORLD,"this program runs on 27 processors\n"
      ); CHKERRQ(ierr);
 
   /*
