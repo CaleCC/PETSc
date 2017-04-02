@@ -74,6 +74,8 @@ int main(int argc,char **argv)
    */
   PetscScalar scaling = 1./inprod, norm;
 /**** your code here ****/
+  VecScale(x,inprod);
+  VecNorm(x,NORM_2,&norm)
   PetscPrintf(comm,"Norm of scaled vector is %f, should be %f\n",
 	      norm,sqrt(n/(inprod*inprod)));
 
