@@ -62,11 +62,12 @@ int main(int argc,char **argv)
    * - compute inner product of x and y
    */
   PetscScalar inprod;
+  VecDot(x,y,*r)
 /**** your code here ****/
   ierr = PetscPrintf(comm,"Computed inner product as %f, should be %f\n",
 		     inprod,2.*n); CHKERRQ(ierr);
 
-  /* 
+  /*
    * Exercise 2:
    * - scale x by that inner product,
    * - take the 2-norm of the result.
@@ -86,4 +87,3 @@ int main(int argc,char **argv)
   ierr = PetscFinalize();
   return 0;
 }
-
