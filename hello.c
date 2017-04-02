@@ -37,6 +37,7 @@ int main(int Argc,char **Args)
   ierr = PetscSynchronizedPrintf
     (
 /**** your code here ****/
+      PETSC_COMM_WORLD,"processor %d",procno
      ); CHKERRQ(ierr);
   ierr = PetscSynchronizedFlush(comm,stdout); CHKERRQ(ierr);
 
