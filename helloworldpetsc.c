@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 	PetscErrorCode ierr;
 
 
-	PetscInitialize(&argc, &argv, (char*) 0, help);
+	PetscInitialize(&argc, &argv, (char*) 0, 0);
   //Setup static data and services
   //Setup MPI if it is not already
 
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 	ierr = PetscSynchronizePrintf(PETSC_COMM_WORLD, "Synchronized Hello from %d\n", rank); CHKERRQ(ierr);
   /*Prints synchronized output from several processors. Output of the first processor is followed by that of the second, etc*/
 
-	ierr = PetscSynchronizedFlush(PETSC_COMM_WORLD); CHKERRQ(ierr);
+	ierr = PetscSynchronizedFlush(PETSC_COMM_WORLD,PETSC_STDOUT); CHKERRQ(ierr);
   /*Flushes to the screen output from all processors involved in previous PetscSynchronizedPrintf() calls.*/
 
 	ierr = PetscPrintf(PETSC_COMM_WORLD, "\nHello from ZERO\n\n"); CHKERRQ(ierr);
