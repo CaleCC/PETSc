@@ -18,7 +18,7 @@ include ${PETSC_DIR}/lib/petsc/conf/rules
 LOCDIR = csolutions
 
 SOURCE = hello
-SOURCES = hello vec matvec ksp grid
+SOURCES = hello vec matvec ksp grid helloworldpetsc
 #grid mat ksp shell ex46 ex46a
 CFLAGS = ${PETSC_CC_INCLUDES} -std=gnu99
 
